@@ -36,7 +36,7 @@ const Navbar = () => {
           href="#tech"
           className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"
         >
-          <li>Tecnologia</li>
+          <li>Tecnologias</li>
         </a>
         <a
           href="#projects"
