@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BiMenu, BiX } from "react-icons/bi";
 import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
 
@@ -8,6 +8,25 @@ const Navbar = () => {
   const menuOpen = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    const screen = window.matchMedia("(min-width: 768px)");
+
+    const handleResize = (event) => {
+      if (event.matches) {
+        setIsOpen(false);
+      }
+    };
+
+    // Comprueba el tamaño cuando se carga el componente
+    handleResize(screen);
+
+    screen.addEventListener("change", handleResize);
+
+    return () => {
+      screen.removeEventListener("change", handleResize);
+    };
+  }, []);
 
   return (
     <nav className="fixed top-0 z-10 flex w-full items-center justify-between border-b-gray-700 bg-black/70 px-16 py-6 text-white backdrop-blur-md md:justify-evenly">
@@ -72,14 +91,14 @@ const Navbar = () => {
 
       {isOpen && (
         <div
-          className={`fixed right-0 top-[84px] flex h-screen w-1/2 flex-col items-start justify-start gap-10 bg-black/90 p-12 ${isOpen ? "block" : "hidden"}`}
+          className={`fixed right-0 top-[84px] flex md:hidden h-screen w-1/2 flex-col items-start justify-start gap-10 bg-black/90 p-12 ${isOpen ? "block" : "hidden"}`}
         >
           <ul className="flex flex-col gap-8">
             <a
               href="#home"
               className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"
             >
-              <li>Home</li>
+              <li>Inicio</li>
             </a>
             <a
               href="#tech"
@@ -97,7 +116,7 @@ const Navbar = () => {
               href="#contact"
               className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"
             >
-              <li>Contact</li>
+              <li>Contacto</li>
             </a>
           </ul>
 
