@@ -19,7 +19,7 @@ const Tech = () => {
       transition={{duration:0.5}}
       className="text-4xl font-light text-white">Tecnologias</motion.h1>
       
-      <div className="flex flex-wrap items-center gap-10 p-5">
+      <div className="flex flex-wrap items-center justify-center gap-10 p-5">
         <motion.div
         variants={variants}
         initial="hidden"
