@@ -73,13 +73,13 @@ const Navbar = () => {
 
       <ul className="hidden md:flex gap-5">
         <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-blue-500 hover:opacity-100">
-          <BsLinkedin />
+          <a href="https://www.linkedin.com/in/eliezeljrmb/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><BsLinkedin /></a>
         </li>
         <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-orange-500 hover:opacity-100">
-          <BsGithub />
+          <a href="https://github.com/Eliezel-Morales-Blondet" target="_blank" rel="noopener noreferrer" aria-label="Github"><BsGithub /></a>
         </li>
         <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-blue-500 hover:opacity-100">
-          <BsFacebook />
+          <a href="https://www.facebook.com/juniiiiord/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><BsFacebook /></a>
         </li>
       </ul>
 
@@ -122,13 +122,13 @@ const Navbar = () => {
 
           <ul className="flex flex-wrap gap-5">
             <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-blue-500 hover:opacity-100">
-              <BsLinkedin />
+              <a href="https://www.linkedin.com/in/eliezeljrmb/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><BsLinkedin /></a>
             </li>
             <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-orange-500 hover:opacity-100">
-              <BsGithub />
+              <a href="https://github.com/Eliezel-Morales-Blondet" target="_blank" rel="noopener noreferrer" aria-label="Github"><BsGithub /></a>
             </li>
             <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-blue-500 hover:opacity-100">
-              <BsFacebook />
+              <a href="https://www.facebook.com/juniiiiord/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><BsFacebook /></a>
             </li>
           </ul>
         </div>
