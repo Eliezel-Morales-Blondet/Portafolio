@@ -1,6 +1,7 @@
 import image1 from '../assets/imagenes_proyectos/digiapi1.png'
 import image2 from '../assets/imagenes_proyectos/calculadora.png'
 import image3 from '../assets/imagenes_proyectos/tictactoe.png'
+import { FaEye } from 'react-icons/fa';
 import { motion } from "motion/react";
 
 const projectsData = [
@@ -15,14 +16,14 @@ const projectsData = [
     image: image2,
     title: "Calculadora",
     descripcion:"Aplicación web de calculadora utilizando Vite, React y TypeScript, diseñada con una interfaz moderna, intuitiva y responsiva. El proyecto permite realizar operaciones matemáticas básicas, como suma, resta, multiplicación y división, mediante una distribución organizada de botones y una pantalla de visualización. La aplicación aprovecha la velocidad de desarrollo de Vite, la arquitectura basada en componentes de React y el tipado estático de TypeScript para ofrecer un código estructurado, mantenible y eficiente.",
-    technologies: ["TypeScript", "React", "Vite", "CSS", "HTML"],
+    technologies: ["TypeScript", "React", "Vite", "HTML", "CSS"],
     link: "https://calculator-app-nu-sable.vercel.app/"
   },
   {
     image: image3,
     title: "Tic Tac Toe",
     descripcion:"Aplicación web del clásico juego Tic Tac Toe (Tres en Raya) utilizando React JS y Vite. Cuenta con una interfaz moderna, intuitiva y responsiva que permite a dos jugadores enfrentarse por turnos en un tablero de 3x3, con el objetivo de conseguir tres símbolos iguales en línea horizontal, vertical o diagonal. La aplicación incorpora lógica para controlar los turnos de los jugadores, detectar combinaciones ganadoras, identificar empates y permitir reiniciar la partida.",
-    technologies: ["JavaScript", "React", "Vite", "CSS", "HTML"],
+    technologies: ["JavaScript", "React", "Vite", "HTML", "CSS"],
     link: "https://tic-tac-toe-alpha-ruddy-47.vercel.app/"
   }
 ]
@@ -31,7 +32,7 @@ const ProjectCard = ({project}) => {
   return (
     <ScrollReveal>
       <div className="flex flex-col items-center gap-8 md:flex-row md:gap-24">
-          <img src={project.image} alt="" className="w-full cursor-pointer rounded-2xl transition-all duration-300 hover:scale-105 md:w-[300px]"/>
+        <img src={project.image} alt="" className="w-full cursor-pointer rounded-2xl transition-all duration-300 hover:scale-105 md:w-[300px]" onClick={() => {window.open(project.link, '_blank', 'noopener,noreferrer')}}/>
         
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-5">
@@ -46,7 +47,10 @@ const ProjectCard = ({project}) => {
                 </span>
               ))
             }
-            <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={project.title} className="rounded-lg bg-black p-3">Ver Proyecto</a>
+            <div className="rounded-lg bg-blue-900 hover:bg-blue-600 p-3 mt-auto ml-auto flex gap-2 items-center">
+              <FaEye/>
+              <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={project.title} >Ver Proyecto</a>
+            </div>
           </div>
         </div>
       </div>
