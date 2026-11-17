@@ -42,7 +42,7 @@ const Navbar = () => {
     <nav className="fixed top-0 z-10 flex w-full items-center justify-between border-b-gray-700 bg-black/70 px-16 py-6 text-white backdrop-blur-md md:justify-evenly">
       <div className="flex gap-5 items-start justify-start">
         <img
-        src="/src/assets/portafolio.png"
+        src="./src/assets/portafolio.png"
         className="h-8 w-8 shrink-0 object-contain md:h-10 md:w-10"
         alt="Logo de Eliezel"
       />
