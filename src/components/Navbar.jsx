@@ -9,6 +9,16 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     const screen = window.matchMedia("(min-width: 768px)");
 
@@ -36,39 +46,21 @@ const Navbar = () => {
         className="h-8 w-8 shrink-0 object-contain md:h-10 md:w-10"
         alt="Logo de Eliezel"
       />
-      <a
-        href="#home"
-        className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent text-3xl font-semibold transition-all duration-300 hover:opacity-80"
+      <button
+        type="button"
+        onClick={() => scrollToSection("home")}
+        className="cursor-pointer border-0 bg-transparent bg-gradient-to-r from-white to-gray-400 bg-clip-text text-3xl font-semibold text-transparent transition-all duration-300 hover:opacity-80"
       >
         ELIEZEL
-      </a>
+      </button>
       </div>
 
       <ul className="hidden md:flex gap-10">
-        <a
-          href="#home"
-          className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"
-        >
-          <li>Inicio</li>
-        </a>
-        <a
-          href="#tech"
-          className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"
-        >
-          <li>Tecnologias</li>
-        </a>
-        <a
-          href="#projects"
-          className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"
-        >
-          <li>Proyectos</li>
-        </a>
-        <a
-          href="#contact"
-          className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"
-        >
-          <li>Contacto</li>
-        </a>
+        <li><button type="button" onClick={() => scrollToSection("home")} className="cursor-pointer border-0 bg-transparent p-0 text-inherit opacity-70 transition-all duration-300 hover:opacity-100">Inicio</button></li>
+        <li><button type="button" onClick={() => scrollToSection("tech")} className="cursor-pointer border-0 bg-transparent p-0 text-inherit opacity-70 transition-all duration-300 hover:opacity-100">Tecnologias</button></li>
+        <li><button type="button" onClick={() => scrollToSection("projects")} className="cursor-pointer border-0 bg-transparent p-0 text-inherit opacity-70 transition-all duration-300 hover:opacity-100">Proyectos</button></li>
+        <li><button type="button" onClick={() => scrollToSection("certificates")} className="cursor-pointer border-0 bg-transparent p-0 text-inherit opacity-70 transition-all duration-300 hover:opacity-100">Certificados</button></li>
+        <li><button type="button" onClick={() => scrollToSection("contact")} className="cursor-pointer border-0 bg-transparent p-0 text-inherit opacity-70 transition-all duration-300 hover:opacity-100">Contacto</button></li>
       </ul>
 
       <ul className="hidden md:flex gap-5">
@@ -94,30 +86,11 @@ const Navbar = () => {
           className={`fixed right-0 top-[84px] flex md:hidden h-screen w-1/2 flex-col items-start justify-start gap-10 bg-black/90 p-12 ${isOpen ? "block" : "hidden"}`}
         >
           <ul className="flex flex-col gap-8">
-            <a
-              href="#home"
-              className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"
-            >
-              <li>Inicio</li>
-            </a>
-            <a
-              href="#tech"
-              className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"
-            >
-              <li>Tecnologia</li>
-            </a>
-            <a
-              href="#projects"
-              className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"
-            >
-              <li>Proyectos</li>
-            </a>
-            <a
-              href="#contact"
-              className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100"
-            >
-              <li>Contacto</li>
-            </a>
+            <li><button type="button" onClick={() => scrollToSection("home")} className="cursor-pointer border-0 bg-transparent p-0 text-inherit opacity-70 transition-all duration-300 hover:opacity-100">Inicio</button></li>
+            <li><button type="button" onClick={() => scrollToSection("tech")} className="cursor-pointer border-0 bg-transparent p-0 text-inherit opacity-70 transition-all duration-300 hover:opacity-100">Tecnologia</button></li>
+            <li><button type="button" onClick={() => scrollToSection("projects")} className="cursor-pointer border-0 bg-transparent p-0 text-inherit opacity-70 transition-all duration-300 hover:opacity-100">Proyectos</button></li>
+            <li><button type="button" onClick={() => scrollToSection("certificates")} className="cursor-pointer border-0 bg-transparent p-0 text-inherit opacity-70 transition-all duration-300 hover:opacity-100">Certificados</button></li>
+            <li><button type="button" onClick={() => scrollToSection("contact")} className="cursor-pointer border-0 bg-transparent p-0 text-inherit opacity-70 transition-all duration-300 hover:opacity-100">Contacto</button></li>
           </ul>
 
           <ul className="flex flex-wrap gap-5">
